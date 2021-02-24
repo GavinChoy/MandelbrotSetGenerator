@@ -34,6 +34,8 @@ double const Y_MIN = -2.0;
 // The maximum number of iterations for the function for determining whether a point is in the Mandelbrot set
 int const MAX_ITERATIONS = 1000;
 
+void terminal_plot();
+
 int main(){
 
     // Licence info on program start
@@ -42,6 +44,17 @@ int main(){
     cout << "This program comes with ABSOLUTELY NO WARRANTY.\n";
     cout << "This is free software, and you are welcome to redistribute it\n";
     cout << "under certain conditions.\n\n";
+
+    // Plot the Mandelbrot set on the terminal.
+    terminal_plot();
+
+    return 0;
+}
+
+void terminal_plot(){
+    /**
+    * Plots the Mandelbrot set on the terminal.
+    */
 
     // Plot a point for each row and column
     for (int row = 0; row < WIDTH; row++){
@@ -62,6 +75,4 @@ int main(){
         }
         cout << endl;
     }
-
-    return 0;
 }
