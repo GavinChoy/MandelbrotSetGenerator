@@ -27,7 +27,7 @@ double const X_MAX = 2.0;
 double const X_MIN = -2.0;
 double const Y_MAX = 2.0;
 double const Y_MIN = -2.0;
-int const MAX_ITERATIONS = 10;
+int const MAX_ITERATIONS = 1000;
 
 int main(){
 
@@ -38,9 +38,22 @@ int main(){
     cout << "This is free software, and you are welcome to redistribute it\n";
     cout << "under certain conditions.\n\n";
 
-    std::complex<double> test (0.0 , 0.0);
+    for (int row = 0; row < WIDTH; row++){
+        for (int col = 0; col < HEIGHT; col++){
 
-    cout << mandelbrot_interations(test, MAX_ITERATIONS);
+            double x_coord = X_MIN + ((row * (X_MAX - X_MIN)) / WIDTH);
+            double y_coord = Y_MIN + ((col * (Y_MAX - Y_MIN)) / HEIGHT);
+
+            std::complex<double> point (x_coord , y_coord);
+
+            if (mandelbrot_interations(point, MAX_ITERATIONS) < (MAX_ITERATIONS / 10)){
+                cout << " ";
+            } else {
+                cout << "#";
+            }
+        }
+        cout << endl;
+    }
 
     return 0;
 }
