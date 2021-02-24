@@ -21,12 +21,17 @@
 #include "Mandelbrot_Iterations.hpp"
 using namespace std;
 
+// The width and height of the plot
 int const WIDTH = 201;
 int const HEIGHT = 201;
+
+// The range of x-coordinates and y-coordinates
 double const X_MAX = 2.0;
 double const X_MIN = -2.0;
 double const Y_MAX = 2.0;
 double const Y_MIN = -2.0;
+
+// The maximum number of iterations for the function for determining whether a point is in the Mandelbrot set
 int const MAX_ITERATIONS = 1000;
 
 int main(){
@@ -38,14 +43,17 @@ int main(){
     cout << "This is free software, and you are welcome to redistribute it\n";
     cout << "under certain conditions.\n\n";
 
+    // Plot a point for each row and column
     for (int row = 0; row < WIDTH; row++){
         for (int col = 0; col < HEIGHT; col++){
 
-            double x_coord = X_MIN + ((row * (X_MAX - X_MIN)) / WIDTH);
-            double y_coord = Y_MIN + ((col * (Y_MAX - Y_MIN)) / HEIGHT);
-
+            // The points are linearly spaced within the range of coordinates
+            double x_coord = X_MIN + ((col * (X_MAX - X_MIN)) / WIDTH);
+            double y_coord = Y_MIN + ((row * (Y_MAX - Y_MIN)) / HEIGHT);
             std::complex<double> point (x_coord , y_coord);
 
+            // If the point is deemed to not be in the Mandelbrot set, leave the pixel empty.
+            // Otherwise, the point is deemed to be in the set so highlight the pixel.
             if (mandelbrot_interations(point, MAX_ITERATIONS) < (MAX_ITERATIONS / 10)){
                 cout << " ";
             } else {

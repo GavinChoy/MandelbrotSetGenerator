@@ -19,10 +19,23 @@
 #include <complex>
 
 int mandelbrot_interations(std::complex<double> c, int max_iterations = 100){
+    /**
+    * Determines whether the function range is bound for a complex constant.
+    * Function: f(z, c) = z^2 + c
+    * If the function range is bound, the constant is in the Mandelbrot set.
+    * @param c Complex double of the coordinate of the point.
+    * @param max_iterations Integer of the maximum number of interations to complete.
+    * @return Integer of how many iterations were completed.
+    */
 
+    // The number of iterations
     int n = 0;
+    // Initial value of the function
     std::complex<double> z (0.0, 0.0);
 
+    // The function must be bound to within a modulus of 2.
+    // Repeat the function until the result is out of bound
+    // or the limit of iterations is reached.
     while ((abs(z) <= 2.0) && (n < max_iterations)){
         z = z*z + c;
         n++;
