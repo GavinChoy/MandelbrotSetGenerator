@@ -67,7 +67,7 @@ void terminal_plot(){
 
             // If the point is deemed to not be in the Mandelbrot set, leave the pixel empty.
             // Otherwise, the point is deemed to be in the set so highlight the pixel.
-            if (mandelbrot_interations(point, MAX_ITERATIONS) < (MAX_ITERATIONS / 10)){
+            if (mandelbrot_iterations(point, MAX_ITERATIONS) < (MAX_ITERATIONS / 10)){
                 cout << " ";
             } else {
                 cout << "#";

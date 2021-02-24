@@ -8,6 +8,6 @@ I was interested in what the Mandelbrot set was and decided to learn how it was 
 
 I used the Complex library to make my code shorter and to improve maintainability.
 
-For Object Oriented Programming, and the Asessment Objectives, I have kept the plotting in a method outside of main(), and kept the function for determining the divergence of the point in a header file.
+For Object Oriented Programming, and the Assessment Objectives, I have kept the plotting in a method outside of main(), and kept the function for determining the divergence of the point in a header file.
 
 My solution was in two files called Mandelbrot.cpp and Mandelbrot_Iterations.hpp

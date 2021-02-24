@@ -18,7 +18,7 @@
 
 #include <complex>
 
-int mandelbrot_interations(std::complex<double> c, int max_iterations = 100){
+int mandelbrot_iterations(std::complex<double> c, int max_iterations = 100){
     /**
     * Determines whether the function range is bound for a complex constant.
     * Function: f(z, c) = z^2 + c
