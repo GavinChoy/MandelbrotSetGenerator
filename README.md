@@ -10,4 +10,4 @@ I used the Complex library to make my code shorter and to improve maintainabilit
 
 For Object Oriented Programming, and the Asessment Objectives, I have kept the plotting in a method outside of main(), and kept the function for determining the divergence of the point in a header file.
 
-My solution was in two files called Hasher.cpp and Hash_function.hpp
+My solution was in two files called Mandelbrot.cpp and Mandelbrot_Iterations.hpp
